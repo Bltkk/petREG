@@ -6,12 +6,27 @@
 </head>
 <body class="inicio-body">
     <h1>PETREG el futuro</h1>
-    <nav>
+    <form id="loginForm">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Iniciar sesión</button>
+        <button type="button" id="showRegister">Registrarse</button>
+    </form>
+    <form id="registerForm" style="display:none;">
+        <label for="newUsuario">Nuevo usuario:</label>
+        <input type="text" id="newUsuario" name="newUsuario" required>
+        <label for="newPassword">Contraseña:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <button type="submit">Registrar</button>
+        <button type="button" id="cancelRegister">Cancelar</button>
+    </form>
+    <nav id="navLinks" style="display:none;">
         <a href="registro.html">Registro de Mascotas</a>
         <a href="miMascotas.html">Mis Mascotas</a>
     </nav>
-    <p>Bienvenido a PETREG, la plataforma para registrar y gestionar la jj
-        jinformación de tus mascotas.</p>
+    <script src="scripts.js"></script>
 </body>
 </html>
 
