@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>PETREG el futuro</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETREG – El Futuro</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="inicio-body">
-    <h1>PETREG el futuro</h1>
-    <form id="loginForm">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Iniciar sesión</button>
-        <button type="button" id="showRegister">Registrarse</button>
-    </form>
-    <form id="registerForm" style="display:none;">
-        <label for="newUsuario">Nuevo usuario:</label>
-        <input type="text" id="newUsuario" name="newUsuario" required>
-        <label for="newPassword">Contraseña:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
-        <button type="submit">Registrar</button>
-        <button type="button" id="cancelRegister">Cancelar</button>
-    </form>
-    <nav id="navLinks" style="display:none;">
-        <a href="registro.html">Registro de Mascotas</a>
-        <a href="miMascotas.html">Mis Mascotas</a>
+  <header class="header">
+    <h1 class="titulo">🐾 PETControl <span>la libreria digital para su mascota</span></h1>
+  </header>
+
+  <main class="contenedor">
+    <!-- Formulario de inicio de sesión -->
+    <section id="loginSection" class="card">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" required placeholder="Ingresa tu usuario">
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+
+        <div class="acciones">
+          <button type="submit" class="btn">ingresar</button>
+          <button type="button" id="showRegister" class="btn-secundario">Registrarse</button>
+        </div>
+      </form>
+    </section>
+    
+    <!-- Navegación principal -->
+    <nav id="navLinks" class="menu" style="display:none;">
+      <a href="registro.html" class="link">➕ Registro de Mascotas</a>
+      <a href="miMascotas.html" class="link">🐶 Mis Mascotas</a>
     </nav>
-    <script src="scripts.js"></script>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 PETREG – Proyecto académico</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
+
 
