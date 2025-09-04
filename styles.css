@@ -176,6 +176,43 @@ button[type="button"]:active{ transform: translateY(1px); }
   font-size: .95rem;
 }
 
+/* ===== Version Information ===== */
+.version-info {
+  background: var(--muted);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid var(--primary);
+}
+
+.version-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.version-info span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.version-history {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: var(--shadow);
+}
+
+.version-history li {
+  margin: 0.5rem 0;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.version-history li:last-child {
+  border-bottom: none;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 460px){
   .titulo{ font-size: 1.75rem; }

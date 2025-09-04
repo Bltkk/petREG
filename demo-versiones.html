@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetREG - Demostración de Versiones</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .version-demo {
+            background: var(--muted);
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin: 1rem 0;
+        }
+        .demo-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            margin: 0.5rem;
+            font-size: 1rem;
+        }
+        .demo-button:hover {
+            background: var(--primary-hover);
+        }
+        .result {
+            background: #e8f5e8;
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin: 1rem 0;
+            border-left: 4px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo">🐾 PetREG <span>Demostración de Versiones</span></h1>
+    </header>
+
+    <div class="demo-container">
+        <h2>Respuesta a: "Dame el número de versiones"</h2>
+        
+        <div class="version-demo">
+            <h3>Información de Versiones</h3>
+            <p><strong>Versión Actual:</strong> <span id="currentVersionDemo">Cargando...</span></p>
+            <p><strong>Número Total de Versiones:</strong> <span id="versionCountDemo">Cargando...</span></p>
+            <p><strong>Número de Build:</strong> <span id="buildNumberDemo">Cargando...</span></p>
+        </div>
+
+        <div class="acciones">
+            <button class="demo-button" onclick="showVersionCount()">Mostrar Número de Versiones</button>
+            <button class="demo-button" onclick="showVersionInfo()">Mostrar Info Completa</button>
+            <button class="demo-button" onclick="simulateNewVersion()">Simular Nueva Versión</button>
+        </div>
+
+        <div id="demoResult" class="result" style="display: none;">
+            <h4>Resultado:</h4>
+            <p id="resultText"></p>
+        </div>
+
+        <div class="version-demo">
+            <h3>Funciones Disponibles</h3>
+            <ul>
+                <li><code>VersionManager.displayVersionCount()</code> - Muestra el número de versiones</li>
+                <li><code>PetRegVersion.getVersionCount()</code> - Obtiene el contador de versiones</li>
+                <li><code>PetRegVersion.getVersionString()</code> - Obtiene la versión actual</li>
+                <li><code>PetRegVersion.getVersionInfo()</code> - Obtiene información completa</li>
+            </ul>
+        </div>
+
+        <div class="acciones">
+            <a href="informacion.html" class="btn">Ver Página de Información</a>
+            <a href="index.html" class="btn">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 PetREG — Sistema de Versiones</p>
+    </footer>
+
+    <script src="version.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        // Demo specific functions
+        function showVersionCount() {
+            const count = VersionManager.displayVersionCount();
+            showResult(`El número de versiones es: ${count}`);
+        }
+
+        function showVersionInfo() {
+            if (typeof PetRegVersion !== 'undefined') {
+                const info = PetRegVersion.getVersionInfo();
+                showResult(`Versión: ${info.version} | Total de versiones: ${info.totalVersions} | Build: ${info.buildNumber} | Fecha: ${info.releaseDate}`);
+            }
+        }
+
+        function simulateNewVersion() {
+            if (typeof PetRegVersion !== 'undefined') {
+                const oldCount = PetRegVersion.getVersionCount();
+                PetRegVersion.incrementVersion('patch');
+                const newCount = PetRegVersion.getVersionCount();
+                updateDemoInfo();
+                showResult(`Versión actualizada: de ${oldCount} a ${newCount} versiones`);
+            }
+        }
+
+        function showResult(text) {
+            const resultDiv = document.getElementById('demoResult');
+            const resultText = document.getElementById('resultText');
+            resultText.textContent = text;
+            resultDiv.style.display = 'block';
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                resultDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function updateDemoInfo() {
+            if (typeof PetRegVersion !== 'undefined') {
+                const info = PetRegVersion.getVersionInfo();
+                document.getElementById('currentVersionDemo').textContent = info.version;
+                document.getElementById('versionCountDemo').textContent = info.totalVersions;
+                document.getElementById('buildNumberDemo').textContent = info.buildNumber;
+            }
+        }
+
+        // Update demo info when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(updateDemoInfo, 100); // Small delay to ensure PetRegVersion is loaded
+        });
+    </script>
+</body>
+</html>
