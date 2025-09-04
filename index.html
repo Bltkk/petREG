@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <title>Bienvenido a PETREG</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetControl — Inicio</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+<body>
+  <header class="encabezado">
+    <h1 class="titulo">🐾 PetControl <span>Inicio de sesión</span></h1>
+    <nav class="barra">
+      <a href="index.html" class="enlace">Inicio</a>
+      <a href="registro.html" class="enlace">Crear cuenta</a>
+    </nav>
+  </header>
 
-<body class="index-body">
-    <h1 class="esquina-titulo">Bienvenido a PETREG</h1>
-    <nav class="inicio-corner">
-    <a href="inicio.html">inicio</a>
-    </nav>
-    <nav class="informacion">
-    <a href="informacion.html">información</a>
-    </nav>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>Ingresar</h2>
+      <form id="formInicioSesion" autocomplete="on">
+        <label for="usuarioInicio">Usuario</label>
+        <input id="usuarioInicio" name="usuarioInicio" type="text" required minlength="3" maxlength="30" placeholder="ej: bmorran"/>
+
+        <label for="contrasenaInicio">Contraseña</label>
+        <input id="contrasenaInicio" name="contrasenaInicio" type="password" required minlength="4" maxlength="32" placeholder="••••"/>
+
+        <div class="acciones">
+          <button type="submit" class="btn">Entrar</button>
+          <a class="btn" href="registro.html">Crear cuenta</a>
+        </div>
+        <p id="mensajeInicioSesion" class="mensaje"></p>
+      </form>
+    </section>
+
+    <section class="tarjeta" id="accesoDirecto" style="display:none">
+      <h2>Acceso</h2>
+      <div class="acciones">
+        <a class="btn" href="duenos.html">Dueños</a>
+        <a class="btn" href="mascotas.html">Mascotas</a>
+        <a class="btn" href="vacunas.html">Vacunas</a>
+        <a class="btn" href="historial.html">Historial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>&copy; 2025 PetControl — Proyecto académico</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
-
 </html>
