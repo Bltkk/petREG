@@ -12,11 +12,11 @@ $('cancelRegister').onclick = function() {
 };
 $('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    $('loginForm').style.display = 'none';
-    $('navLinks').style.display = 'block';
+    // Redirige a menuSesion.html después de iniciar sesión
+    window.location.href = "menuSesion.html";
 });
 $('registerForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    $('registerForm').style.display = 'none';
-    $('navLinks').style.display = 'block';
+    // Redirige a menuSesion.html después de registrar usuario
+    window.location.href = "menuSesion.html";
 });

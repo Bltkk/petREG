@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PETREG – El Futuro</title>
+  <title>PETREG El Futuro</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="inicio-body">
   <header class="header">
-    <h1 class="titulo">🐾 PETControl <span>la libreria digital para su mascota</span></h1>
+    <h1 class="titulo">PETControl <span>la libreria digital para su mascota</span></h1>
   </header>
 
   <main class="contenedor">
@@ -23,17 +23,30 @@
         <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
 
         <div class="acciones">
-          <button type="submit" class="btn">ingresar</button>
+          <button type="submit" class="btn">Ingresar</button>
           <button type="button" id="showRegister" class="btn-secundario">Registrarse</button>
         </div>
       </form>
     </section>
+
+    <!-- Formulario de registro de usuario -->
+    <section id="registerSection" class="card" style="display:none;">
+      <h2>Registro de Usuario</h2>
+      <form id="registerForm">
+        <label for="newUsuario">Nuevo usuario</label>
+        <input type="text" id="newUsuario" name="newUsuario" required placeholder="Crea tu usuario">
+
+        <label for="newPassword">Contraseña</label>
+        <input type="password" id="newPassword" name="newPassword" required placeholder="Crea tu contraseña">
+
+        <div class="acciones">
+          <button type="submit" class="btn">Registrar</button>
+          <button type="button" id="cancelRegister" class="btn-secundario">Cancelar</button>
+        </div>
+      </form>
+    </section>
     
-    <!-- Navegación principal -->
-    <nav id="navLinks" class="menu" style="display:none;">
-      <a href="registro.html" class="link">➕ Registro de Mascotas</a>
-      <a href="miMascotas.html" class="link">🐶 Mis Mascotas</a>
-    </nav>
+
   </main>
 
   <footer class="footer">
