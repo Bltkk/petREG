@@ -2,14 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>PETREG - Página Principal</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <h1>PETREGISTRO</h1>
-  <nav>
-    <a href="inicio.html">Inicio</a> |
-    <a href="informacion.html">Información</a> |
-  <nav>
-    
+<body class="index-body">
+  <!-- Header con logo y título -->
+  <header class="header">
+    <div class="logo-titulo">
+      <h1 class="titulo">🐾 PETREG</h1>
+    </div>
+    <!-- Menú de navegación horizontal -->
+    <nav class="menu-horizontal">
+      <a href="inicio.html" class="link">Inicio</a>
+      <a href="informacion.html" class="link">Información</a>
+    </nav>
+  </header>
+  <!-- Sección principal -->
+  <main class="contenedor">
+    <section class="bienvenida">
+      <h2>Bienvenido a PETREG</h2>
+      <p>
+        Plataforma digital para registrar y gestionar información de tus mascotas.<br>
+        Ingresa a <strong>Inicio</strong> para acceder o crear tu cuenta.
+      </p>
+    </section>
+    <!-- Noticias (NO SE BORRAN) -->
+    <section class="noticias">
+      <div class="noticia-card">
+        <img src="imagenes/noticia1.jpg" alt="Noticia 1" class="noticia-img">
+        <h3>¡Nueva función de registro!</h3>
+        <p>Ahora puedes registrar a tus mascotas con más detalles y fotos.</p>
+      </div>
+      <div class="noticia-card">
+        <img src="noticia2.jpg" alt="Noticia 2" class="noticia-img">
+        <h3>Consejos para el cuidado</h3>
+        <p>Los mejores tips para mantener a tus mascotas sanas y felices.</p>
+      </div>
+      <div class="noticia-card">
+        <img src="noticia3.jpg" alt="Noticia 3" class="noticia-img">
+        <h3>¡Evento PETREG!</h3>
+        <p>Participa en nuestro próximo evento y conoce a otros amantes de los animales.</p>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 PETREG - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

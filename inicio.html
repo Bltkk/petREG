@@ -2,57 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PETREG El Futuro</title>
+  <title>Iniciar Sesión - PETREG</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="inicio-body">
-  <header class="header">
-    <h1 class="titulo">PETControl <span>la libreria digital para su mascota</span></h1>
-  </header>
-
-  <main class="contenedor">
-    <!-- Formulario de inicio de sesión -->
-    <section id="loginSection" class="card">
+  <main class="login-container">
+    <div class="login-card" id="loginFormBox">
       <h2>Iniciar Sesión</h2>
       <form id="loginForm">
         <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" name="usuario" required placeholder="Ingresa tu usuario">
-
+        <input type="text" id="usuario" name="usuario" required>
         <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
-
-        <div class="acciones">
-          <button type="submit" class="btn">Ingresar</button>
-          <button type="button" id="showRegister" class="btn-secundario">Registrarse</button>
-        </div>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn">Ingresar</button>
+        <button type="button" id="showRegister" class="btn">Registrarse</button>
       </form>
-    </section>
-
-    <!-- Formulario de registro de usuario -->
-    <section id="registerSection" class="card" style="display:none;">
+    </div>
+    <div class="login-card" id="registerFormBox" style="display:none;">
       <h2>Registro de Usuario</h2>
       <form id="registerForm">
         <label for="newUsuario">Nuevo usuario</label>
-        <input type="text" id="newUsuario" name="newUsuario" required placeholder="Crea tu usuario">
-
+        <input type="text" id="newUsuario" name="newUsuario" required>
         <label for="newPassword">Contraseña</label>
-        <input type="password" id="newPassword" name="newPassword" required placeholder="Crea tu contraseña">
-
-        <div class="acciones">
-          <button type="submit" class="btn">Registrar</button>
-          <button type="button" id="cancelRegister" class="btn-secundario">Cancelar</button>
-        </div>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <button type="submit" class="btn">Registrar</button>
+        <button type="button" id="cancelRegister" class="btn">Cancelar</button>
       </form>
-    </section>
-    
-
+    </div>
   </main>
-
-  <footer class="footer">
-    <p>&copy; 2024 PETREG – Proyecto académico</p>
-  </footer>
-
   <script src="scripts.js"></script>
 </body>
 </html>

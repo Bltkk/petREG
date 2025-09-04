@@ -1,14 +1,12 @@
-function $(id) {
-    return document.getElementById(id);
-}
+function $(id) { return document.getElementById(id); }
 
 $('showRegister').onclick = function() {
-    $('loginForm').style.display = 'none';
-    $('registerForm').style.display = 'block';
+  $('loginFormBox').style.display = 'none';
+  $('registerFormBox').style.display = 'flex';
 };
 $('cancelRegister').onclick = function() {
-    $('registerForm').style.display = 'none';
-    $('loginForm').style.display = 'block';
+  $('registerFormBox').style.display = 'none';
+  $('loginFormBox').style.display = 'flex';
 };
 $('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();

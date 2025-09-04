@@ -1,1 +1,225 @@
-/* style
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Fondo y fuente */
+body.index-body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #e3f2fd 60%, #8abeef 100%);
+    color: #222;
+    display: flex;
+    flex-direction: column;
+}
+.inicio-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('catdog.jpg') center 30% / cover no-repeat, linear-gradient(135deg, #8abeef 50%, #e3f2fd 80%);
+}
+
+/* Header y logo */
+.header {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding-bottom: 8px;
+}
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    padding: 16px 32px 0 32px;
+}
+.logo {
+    height: 56px;
+    margin-right: 18px;
+}
+.titulo {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #1976d2;
+    letter-spacing: .5px;
+}
+
+/* Menú horizontal */
+.menu-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: #e3f2fd;
+    padding: 12px 0;
+    border-radius: 0 0 16px 16px;
+}
+.menu-horizontal .link {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 6px 18px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.menu-horizontal .link:hover,
+.menu-horizontal .link.activo {
+    background: #bbdefb;
+    color: #1565c0;
+}
+
+/* Sección principal */
+.contenedor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+/* Bienvenida */
+.bienvenida {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    min-width: 320px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+.bienvenida h2 {
+    color: #1976d2;
+    margin-bottom: 16px;
+}
+.bienvenida p {
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Noticias */
+.noticias {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.noticia-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 20px 24px;
+    max-width: 300px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noticia-img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.noticia-card h3 {
+    color: #1976d2;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.noticia-card p {
+    color: #333;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    background: #e3f2fd;
+    color: #1976d2;
+    font-size: 1.1em;
+    border-top: 1px solid #8abeef;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+}
+
+/* Login */
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: rgba(255,255,255,0.8);
+    padding: 32px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 400px;
+}
+.login-card h2 {
+    color: #1976d2;
+    margin-bottom: 1rem;
+}
+.login-card label {
+    font-weight: 600;
+    color: #1976d2;
+    margin-top: 12px;
+}
+.login-card input {
+    padding: 10px;
+    border: 1px solid #8abeef;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-bottom: 16px;
+    width: 100%;
+}
+.btn {
+    background: #1976d2;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn:hover {
+    background: #1565c0;
+}
+
+/* Menú adicional */
+.menu {
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 18px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+}
+.menu .link {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px 0;
+    transition: color 0.2s;
+}
+.menu .link:hover {
+    color: #1565c0;
+}
