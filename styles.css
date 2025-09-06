@@ -2,7 +2,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* Fondo y fuente */
-body.index-body {
+body {
     min-height: 100vh;
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(120deg, #e3f2fd 60%, #8abeef 100%);
@@ -10,35 +10,23 @@ body.index-body {
     display: flex;
     flex-direction: column;
 }
-.inicio-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('catdog.jpg') center 30% / cover no-repeat, linear-gradient(135deg, #8abeef 50%, #e3f2fd 80%);
-}
 
-/* Header y logo */
+/* Header y título */
 .header {
     width: 100%;
-    background: #fff;
+    padding: 32px 0 16px 0;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    padding-bottom: 8px;
-}
-.logo-titulo {
-    display: flex;
-    align-items: center;
-    padding: 16px 32px 0 32px;
-}
-.logo {
-    height: 56px;
-    margin-right: 18px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
 }
 .titulo {
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: 800;
     color: #1976d2;
     letter-spacing: .5px;
+    margin-bottom: 8px;
 }
 
 /* Menú horizontal */
@@ -66,34 +54,71 @@ body.index-body {
     color: #1565c0;
 }
 
-/* Sección principal */
+/* Contenedor principal */
 .contenedor {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     padding: 40px 0;
 }
 
-/* Bienvenida */
-.bienvenida {
-    background: rgba(255,255,255,0.95);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+/* Tarjetas de bienvenida y noticias */
+.bienvenida, .registro-box, .login-card, .menu-box {
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
     padding: 32px 40px;
-    margin-bottom: 32px;
     min-width: 320px;
-    max-width: 600px;
-    width: 90%;
-    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 32px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.bienvenida h2 {
+.bienvenida h2, .registro-box h2, .login-card h2, .menu-box h2 {
     color: #1976d2;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
-.bienvenida p {
-    color: #333;
-    line-height: 1.7;
+
+/* Formulario de registro y login */
+form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+label {
+    font-weight: 600;
+    color: #1976d2;
+}
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #8abeef;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #1976d2;
+    background: #e3f2fd;
+}
+
+/* Botón principal */
+.btn {
+    background: #1976d2;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn:hover {
+    background: #1565c0;
 }
 
 /* Noticias */
@@ -148,15 +173,54 @@ body.index-body {
     box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
 }
 
-/* Login */
-.login-container {
-    width: 100vw;
-    height: 100vh;
+.opcion-box {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    padding: 24px 32px;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 220px;
+    transition: box-shadow 0.2s;
+}
+.opcion-box:hover {
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
 }
 
+/* Tabla de mascotas */
+.tabla-mascotas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.tabla-mascotas th, .tabla-mascotas td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e3f2fd;
+}
+.tabla-mascotas th {
+    background: #e3f2fd;
+    color: #1976d2;
+    font-weight: bold;
+}
+.tabla-mascotas tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilos específicos para la página de login */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-direction: column;
+}
 .login-card {
     background: rgba(255,255,255,0.85);
     padding: 32px 40px;
@@ -167,62 +231,4 @@ body.index-body {
     align-items: center;
     min-width: 320px;
     max-width: 400px;
-}
-.login-card h2 {
-    color: #1976d2;
-    margin-bottom: 1rem;
-}
-.login-card label {
-    font-weight: 600;
-    color: #1976d2;
-    margin-top: 12px;
-}
-.login-card input,
-.login-card select,
-.login-card textarea {
-    padding: 10px;
-    border: 1px solid #8abeef;
-    border-radius: 8px;
-    font-size: 1em;
-    margin-bottom: 16px;
-    width: 100%;
-}
-.btn {
-    background: #1976d2;
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-.btn:hover {
-    background: #1565c0;
-}
-
-/* Menú de la caja */
-.menu-box {
-    background: rgba(255,255,255,0.85);
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    padding: 32px 40px;
-    min-width: 320px;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-}
-.menu-box .link {
-    color: #1976d2;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 10px 0;
-    transition: color 0.2s;
-}
-.menu-box .link:hover {
-    color: #1565c0;
 }
