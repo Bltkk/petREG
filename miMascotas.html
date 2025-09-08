@@ -14,7 +14,7 @@
     </nav>
   </header>
   <main class="contenedor">
-    <section class="bienvenida">
+    <section class="bienvenida" style="width: 100%; max-width: 900px;">
       <h2>Listado de Mascotas Registradas</h2>
       <table class="tabla-mascotas">
         <thead>
@@ -22,11 +22,13 @@
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Edad</th>
+            <th>Vacunas</th>
+            <th>Castrada</th>
             <th>Descripción</th>
           </tr>
         </thead>
         <tbody id="listaMascotas">
-          <!-- Aquí se mostrarán las mascotas registradas -->
+          <!-- Aquí se mostraran las mascotas registradas por los usuario -->
         </tbody>
       </table>
     </section>
@@ -34,5 +36,40 @@
   <footer class="footer">
     <p>&copy; 2025 PETREG - Todos los derechos reservados</p>
   </footer>
+  <script>
+    // Ejemplo de mascotas qye vamos registradas
+    const mascotas = [
+      {
+        nombre: "Firulais",
+        tipo: "Perro",
+        edad: 3,
+        vacunas: "Rabia, Parvovirus",
+        castrada: "Sí",
+        descripcion: "Juguetón y amigable"
+      },
+      {
+        nombre: "Mishi",
+        tipo: "Gato",
+        edad: 2,
+        vacunas: "Triple felina",
+        castrada: "No",
+        descripcion: "Le encanta dormir"
+      }
+    ];
+
+    const lista = document.getElementById('listaMascotas');
+    mascotas.forEach(m => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${m.nombre}</td>
+        <td>${m.tipo}</td>
+        <td>${m.edad}</td>
+        <td>${m.vacunas || '-'}</td>
+        <td>${m.castrada || '-'}</td>
+        <td>${m.descripcion || '-'}</td>
+      `;
+      lista.appendChild(row);
+    });
+  </script>
 </body>
 </html>

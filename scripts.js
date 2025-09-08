@@ -54,3 +54,47 @@ $('registerForm').addEventListener('submit', function(e) {
   window.location.href = "menuSesion.html";
   e.preventDefault();
 });
+// Validación para registro de mascottas
+document.addEventListener('DOMContentLoaded', function() {
+  const form = $('formRegistroMascota');
+  form.addEventListener('submit', function(e) {
+    const nombre = $('nombreMascota').value.trim();
+    const tipo = $('tipoMascota').value;
+    const edad = $('edadMascota').value;
+    const vacunas = $('vacunasMascota').value.trim();
+    const castrada = $('castradaMascota').value;
+    const descripcion = $('descripcionMascota').value.trim();
+
+    if (nombre.length < 2) {
+      alert('El nombre de la mascota debe tener al menos 2 caracteres.');
+      $('nombreMascota').focus();
+      e.preventDefault();
+      return false;
+    }
+    if (!tipo) {
+      alert('Selecciona el tipo de mascota.');
+      $('tipoMascota').focus();
+      e.preventDefault();
+      return false;
+    }
+    if (!edad || isNaN(edad) || Number(edad) < 0) {
+      alert('Ingresa una edad válida.');
+      $('edadMascota').focus();
+      e.preventDefault();
+      return false;
+    }
+    if (!vacunas) {
+      alert('Por favor, indica las vacunas que tiene la mascota.');
+      $('vacunasMascota').focus();
+      e.preventDefault();
+      return false;
+    }
+    if (!castrada) {
+      alert('Indica si la mascota está castrada.');
+      $('castradaMascota').focus();
+      e.preventDefault();
+      return false;
+    }
+    // Puedes agregar más validaciones si lo necesitas
+  });
+});
